@@ -18,7 +18,9 @@ const port = 5000;
 const connectionString = process.env.MONGO_URI;
 mongoose.connect(connectionString, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false, // To disable deprecation warning for findOneAndUpdate
+  useCreateIndex: true,
 })
     .then(() => console.log('Connected to the database…'))
     .catch((err) => console.error('Connection error:', err));
