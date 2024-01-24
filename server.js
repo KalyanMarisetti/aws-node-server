@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const port = 4001;
+const port = 5000;
 
 
 const connectionString = process.env.MONGO_URI;
