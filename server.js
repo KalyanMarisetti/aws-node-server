@@ -16,7 +16,10 @@ const port = 4001;
 
 
 const connectionString = process.env.MONGO_URI;
-mongoose.connect(connectionString)
+mongoose.connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
     .then(() => console.log('Connected to the database…'))
     .catch((err) => console.error('Connection error:', err));
 
